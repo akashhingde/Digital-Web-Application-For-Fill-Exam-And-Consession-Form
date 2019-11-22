@@ -1,0 +1,19 @@
+{% extends 'index.html' %}
+
+{% block body %}
+
+
+
+	name:-{{student_id.name}}</br>
+	Address:-{{student_id.address}}</br>
+	Birth Date:-{{student_id.birth_date}}</br>
+	mobile no:-{{student_id.mobile_no}}</br>
+	gender:-{{student_id.gender}}</br>
+	current year:-{{student_id.current_year}}</br>
+	category:-{{student_id.category}}
+	
+
+
+
+
+{% endblock %}

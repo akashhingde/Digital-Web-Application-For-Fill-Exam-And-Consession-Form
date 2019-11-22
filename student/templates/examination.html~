@@ -1,0 +1,116 @@
+<!doctype HTML>
+<html>
+    <head>
+        <title>SSJCOE HOME</title>
+        <link href="css\style.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <img src="images/logo.png" alt="logo">
+        <div id="div1">
+             <b>
+        <ul id="ul1">
+            <li id="li1">Home</li>
+            <li id="li2">Transportation
+                <ul id="sub1">
+                    <li>Railway Pass</li>
+                    <li>Bus Pass</li>
+                    
+                </ul>
+            </li>
+            <li id="li3">Examination
+                <ul id="sub2">
+                    <li><a href="#">CBGS/CBCS Regular</a></li>
+                    <li><a href="exminationatkt.html">CBGS/CBCS ATKT</a></li>
+                </ul>
+            </li>
+            <li id="li4">Revaluation
+                <ul id="sub3">
+                    <li><a href="regularrevalution.html">CBGS/CBCS Regular Revaluation</a></li>
+                    <li><a href="atktrevalution.html">CBGS/CBCS ATKT Revaluation</a></li>
+                </ul>
+            </li>
+            <li id="li5">Photocopy
+                <ul id="sub4">
+                    <li><a href="regularphotocopy.html">CBGS/CBCS Regular Photocopy</a></li>
+                    <li><a href="atktphotocopy.html">CBGS/CBCS ATKT Photocopy</a></li>
+                </ul>
+            </li>
+            <li id="li6">Results</li>
+            <li id="li7">Feedback</li>
+            <li id="li8">Change Password</li>
+            <li id="li9">Logout</li>
+        </ul>
+        
+              
+            </b></div>
+             <center>
+        <div id="maindiv">
+            <center><b>EXAM APPLICATION FORM:-CBGS/CBCS</b></center>
+           </div>   
+             <b><div id="div6">
+              <table id="table1">
+                <tr>
+                    <td>Month/Year</td>
+                    <td><select>
+                        <option></option>
+                        <option>December18</option>
+                        
+                    </select></td>
+                </tr>
+                <tr>
+                    <td>Semister</td>
+                    <td><select>
+                        <option></option>
+                        <option>III</option>
+                        <option>IV</option>
+                        <option>V</option>
+                        <option>VI</option>
+                        
+                    </select></td>
+                </tr>
+                <tr>
+                    <td>Roll No:-</td>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <td>Nameas per marksheet:-</td>
+                    <td>Yshodhan Yashwant Tahamakar</td>
+                </tr>
+                <tr>
+                    <td>Admission No:-</td>
+                    <td>2015HE0303</td>
+                </tr>
+                <tr>
+                    <td>Address:-</td>
+                    <td>A-204,Shree Gana Apartment,Janta Market,Bhandup(W),Mumbai-400078</td>
+                </tr>
+                <tr>
+                    <td>Mobile No:-</td>
+                    <td>7738442195</td>
+                </tr>
+                <tr>
+                    <td>Email:-</td>
+                    <td>yashodhantahamakar@gmail.com</td>
+                </tr>
+                
+                <tr>
+                    <td></td>
+                    <td><button class="submit">SUBMIT</button></td>
+                </tr>
+                 <tr>
+                    <td></td>
+                    <td><button class="viewapplication">View Application</button></td>
+                </tr>
+  
+               
+                 </table></div></b></center>
+            
+            
+                
+        
+        
+       
+        
+    </body>
+    
+</html>   

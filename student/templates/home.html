@@ -1,0 +1,28 @@
+
+
+{% load staticfiles %}
+
+
+
+{% if user.profile %}
+
+	{% include 'student.html' %}
+	
+    
+
+{% elif user.examcelladmin %}
+
+	 {% include 'examcelladmin.html' %}
+{% elif user.consessionadmin %}
+
+	{% include 'consessionadmin.html' %}
+
+
+{% else %}
+
+  <p>You are not logged in</p>
+  <a href="{% url 'login' %}">login</a>
+    </b>
+{% endif %}
+
+

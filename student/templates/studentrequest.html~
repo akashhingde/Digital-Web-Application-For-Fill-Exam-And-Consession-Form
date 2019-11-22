@@ -1,0 +1,74 @@
+{% extends 'index1.html' %}
+{% block body %}
+<title> {% block title %}Students Request{% endblock %}</title>
+ <div class="col-sm-8 col-md-9">
+
+            <div class="panel panel-default">
+                    <center><h3 style="margin-left:200px;">All Students Who Apply For Examination</h3></center>
+						<form class="form-inline my-2 my-lg-0">
+					 <select name="q">
+						<option>select branch</option>
+                    	<option>Information Technology</option>
+                    	<option>Computer Engineering</option>
+                    	<option>Mechanical Engineering</option>
+                    	<option>Chemical Engineering</option>
+                    	<option>Production Engineering</option>
+                	</select><br>
+     					 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+					 </form>
+                    
+
+                    <table class="table"> 
+                        <thead>
+                        <tr>
+			<th>S.no.</th>
+                         <th>Name</th>
+                         <th>Admission No</th>
+			<th>Roll No</th>
+			 <th>Month/year</th>
+			 <th>Branch</th> 
+			<th>Year</th>
+			<th>Semester</th>
+			<th>Subjects</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+			{% for r in examrequest %}  
+     			<tr>
+			<td>
+			{{ forloop.counter }}
+			</td>
+			<td>
+			{{ r.user.profile.full_name }} 
+			</td>
+			<td>
+			{{ r.user.profile.admission_no }}
+			</td>
+			<td>
+			{{ r.roll_no }}
+			</td>
+			<td>            
+                        {{ r.month }}        
+                        </td> 
+			<td>
+			{{ r.branch }}
+			</td>
+			<td>
+			{{ r.year }}
+			</td>
+			<td>
+			{{ r.semester }}
+                        </td>
+
+			<td>
+			{{ r.subject1 }} &nbsp; {{ r.subject2 }}
+                        </td>           
+                        
+			{% endfor %}       
+                        </tr>
+			</tbody>
+			</table>    
+	</div>
+	</div>        
+
+{% endblock %}

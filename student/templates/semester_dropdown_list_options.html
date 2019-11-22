@@ -1,0 +1,8 @@
+<option value="">---</option>
+{% for semester in semesters %}
+<input type="checkbox" value="{{ semester.id }}">{{ semester.name }}</input>
+{% endfor %}
+
+{% for sub in subjects %}
+    <li>{{ sub.name }}</li>
+{% endfor %}

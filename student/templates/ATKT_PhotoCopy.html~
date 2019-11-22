@@ -1,0 +1,105 @@
+{% extends 'index.html' %}
+<title>
+{% block title %} ATKT_PhotoCopy {% endblock %}
+</title>
+{% block body %}
+
+        </div>
+            </div>  
+            <h4><center><b>APLICATION FOR PHOTOCOPY - ATKT</b></center> </h4>	
+             <center><b><div id="div5">
+              <table width="700" id="table1">
+        	<form  method="post" id="atktphotocopyform" data-semesters-url="{% url 'ajax_load_semesters' %}" novalidate> 
+           	 {% csrf_token %}
+            
+                  <tr>
+                    <td>Month:-</td>
+                    <td>{{ form.month }}</td>
+		  </tr>            
+	
+	        <tr>
+                    <td>Roll No:-</td>
+                    <td>{{ form.roll_no }}</td>
+		  </tr>          
+	     	 
+		<tr>
+                    <td>Branch:-</td>
+                    <td>{{ form.branch }}</td>
+		  </tr> 
+
+		<tr>
+                    <td>Year:-</td>
+                    <td>{{ form.year }}</td>
+		  </tr> 
+
+         	 <tr>
+                    <td>Semester:-</td>
+                    <td>{{ form.semester }}</td>
+		  </tr> 
+		<tr>
+                    <td>Last Seat Number:-</td>
+                    <td>{{ form.last_seat_no }}</td>
+		  </tr> 
+          	     	 
+		   <tr>
+                    <td>Subjects:-</td>
+                    <td>{{ form.subject1 }} {{ form.subject2 }} {{ form.subject3 }} <br>  {{ form.subject4 }} {{ form.subject5 }} {{ form.subject6 }} </td>
+                   </tr>
+
+                <tr>
+                    <td>Nameas per marksheet:-</td>
+                    <td>{{ user.profile.full_name }}</td>
+                </tr>
+                <tr>
+                    <td>Admission No:-</td>
+                    <td>{{ user.profile.admission_no }}</td>
+                </tr>
+                <tr>
+                    <td>Address:-</td>
+                    <td>{{ user.profile.address }}</td>
+                </tr>
+                <tr>
+                    <td>Mobile No:-</td>
+                    <td>{{ user.profile.mobile_no }}</td>
+                </tr>
+                <tr>
+                    <td>Email:-</td>
+                    <td>{{ user.email }}</td>
+                </tr>
+                
+                <tr>
+                <tr>
+                    <td></td>
+                    <td><button class="btn btn-info" onclick='overlay()'>SUBMIT</button></td>
+                </tr>
+               
+               
+                 </table></div></b></center></form>
+
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.1.min.js">
+</script>
+  <script>
+    $("#id_year").change(function () {
+      var url = $("#atktphotocopyform").attr("data-semesters-url");  // get the url of the `load_cities` view
+      var yearId = $(this).val();  // get the selected country ID from the HTML input
+
+      $.ajax({                       // initialize an AJAX request
+        url: url,                    // set the url of the request (= localhost:8000/hr/ajax/load-cities/)
+        data: {
+          'year': yearId       // add the country id to the GET parameters
+        },
+        success: function (data) {   // `data` is the return of the `load_cities` view function
+          $("#id_semester").html(data);  // replace the contents of the city input with the data that came from the server
+        }
+      });
+
+    });
+  </script>
+   
+<script>
+function overlay(n) {
+	alert("Your Application for ATKT-Photocopy successesfully Submited!");
+}
+</script>
+
+{% endblock %}

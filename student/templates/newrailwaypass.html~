@@ -1,0 +1,76 @@
+{% extends 'index.html' %}
+
+{% load staticfiles %}
+
+<title xmlns="http://www.w3.org/1999/html">
+{% block title %}New Railway-Consession {% endblock %}
+</title>
+<link rel="stylesheet" type="text/css" href="{% static 'student/style.css' %}">
+
+
+{% block body %}
+
+<div class="fluid">
+	<div class="row">
+
+	`<div class="col-sm-7 " id="ticket_info">
+    <center>
+
+
+    {%if  user.consessionformmodel.status  == 1 %}
+        <strong>* Your Request is Accepted by Consession-Admin Please collect Your Consession-Form from Consession Admin *</strong>
+    {% elif user.consessionformmodel.status  == 2 %}
+    <strong>* Your Request is Rejected by Consession-Admin Please contact with consession admin</strong>
+    {% elif user.consessionformmodel.status  == 0 %}
+        <strong>* Your Request is Pending</strong>
+	 {% else  %}
+       
+
+    {% endif %}
+
+<h3>New RAILWAY CONCESSION</h3>
+        <table id="table1">
+            <tr>
+              <form method="POST" class="post-form" enctype="multipart/form-data">
+                {% csrf_token %}
+
+                  {{ form }}
+                  <b><td>Applied Date:</td><td id="date"></td></b>
+                  <td></td>
+                  <td></td>
+                  <tr>
+                   <td></td> <td><button class="btn btn-info" onclick='overlay()'>Submit</button>
+                   
+                 </tr>
+                </tr>
+              </form>
+        </table>
+    </center>
+    </div>
+ 
+
+    </div>
+</div>
+
+</table>
+
+
+
+            </table>
+	</div>
+
+
+<script>
+document.getElementById("date").innerHTML = Date();
+</script>
+
+<script>
+function overlay(n) {
+	alert("Your Application for Railway Concession Applied successesfully Please Check Your statues !");
+}
+</script>
+
+
+        
+
+ {% endblock %}

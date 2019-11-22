@@ -1,0 +1,163 @@
+{% extends 'index.html' %}
+<title>
+  {% block title %} Regular_Examination {% endblock %}
+</title>
+{% block body %}
+
+<!-- <div id="maindiv"> -->
+<!-- 
+  <h4>
+    <center><b>REGULAR EXAM APPLICATION FORM</b></center>
+  </h4> -->
+
+<form method="post" id="examform" data-semesters-url="{% url 'ajax_load_semesters' %}" novalidate>
+  {% csrf_token %}
+  <center> <b>
+      <h4>
+          <center><b>REGULAR EXAM APPLICATION FORM</b></center>
+        </h4>
+      <div id="div6" class="container">
+        <table id="table1">
+          <tr>
+            <td>Month:-</td>
+            <td>{{ form.month }}</td>
+            <td>{{ form.username.errors }}</td>
+
+          </tr>
+
+          <tr>
+            <td>Roll No:-</td>
+            <td>{{ form.roll_no }}</td>
+          </tr>
+
+          <tr>
+            <td>Branch:-</td>
+            <td id="branch_id">{{ form.branch }}</td>
+          </tr>
+
+          <tr>
+            <td>Year:-</td>
+            <td>{{ form.year }}</td>
+          </tr>
+
+          <tr>
+            <td>Semester:-</td>
+            <td id="semester_id" onchange= "myFunction(this.value);">{{ form.semester }}</td>
+          </tr>
+          <tr>
+            <td>Nameas per marksheet:-</td>
+            <td>{{ user.profile.full_name }}</td>
+          </tr>
+          <tr>
+            <td>Admission No:-</td>
+            <td>{{ user.profile.admission_no }}</td>
+          </tr>
+          <tr>
+            <td>Address:-</td>
+            <td>{{ user.profile.address }}</td>
+          </tr>
+          <tr>
+            <td>Mobile No:-</td>
+            <td>{{ user.profile.mobile_no }}</td>
+          </tr>
+          <tr>
+            <td>Email:-</td>
+            <td>{{ user.email }}</td>
+          </tr>
+
+
+          
+            <td></td>
+            </tr>
+            <tr>
+              </table>
+              
+                <div id="id_table"></div> <br>
+            <td><button type="submit" class="btn btn-info" onclick='overlay()'>SUBMIT</button>
+              <a href="/regulerprint" class="btn btn-info">ViewApplication</a>
+            </td>
+
+          </tr>
+        </div></b></center>          
+</form>
+
+
+
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.1.min.js">
+</script>
+<script>
+  $("#id_year").change(function () {
+    var url = $("#examform").attr("data-semesters-url"); // get the url of the `load_cities` view
+    var yearId = $(this).val(); // get the selected country ID from the HTML input
+     
+
+    $.ajax({ // initialize an AJAX request
+      url: url, // set the url of the request (= localhost:8000/hr/ajax/load-cities/)
+      data: {
+        'year': yearId // add the country id to the GET parameters
+      },
+      success: function (data) { // `data` is the return of the `load_cities` view function
+        $("#id_semester").html(
+        data); // replace the contents of the city input with the data that came from the server
+      }
+    });
+
+  });
+
+
+
+
+function overlay(n) {
+
+field = document.getElementById("hidden_field");
+field.value = n;
+document.getElementById("subject_name").innerHTML = n;
+
+
+}
+
+
+  function overlay(n) {
+    alert("Your Application for Exam-Form successesfully Submited!");
+  }
+
+
+  function printContent(el) {
+    var restorepage = document.body.innerHTML;
+    var printcontent = document.getElementById(el).innerHTML;
+    document.body.innerHTML = printcontent;
+    window.print();
+    document.body.innerHTML = restorepage;
+  }
+
+
+
+
+    function myFunction(str) {
+      let sem = document.getElementById('id_semester').value;
+      let branch_id=document.getElementById('id_branch').value;
+      // var text= sem.options[sem.selectedIndex].text;
+      console.log(branch_id);
+      
+      var xhttp;    
+      if (sem == "") {
+        document.getElementById("id_table").innerHTML = "";
+        return;
+      }
+      xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          document.getElementById("id_table").innerHTML = this.responseText;
+          console.log(this.responseText)
+        }
+      };
+      a = xhttp.open("GET", "ajax/load-subjects?q="+sem+"&branch="+branch_id, true);
+      console.log(a);
+      xhttp.send();
+    }
+    </script>
+
+
+
+
+{% endblock %}

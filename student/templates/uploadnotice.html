@@ -1,0 +1,18 @@
+{% extends 'index1.html' %}
+
+{% block body %}
+<div class="container">
+
+<form method="post" enctype="multipart/form-data">
+	{% csrf_token %}
+	{{ form.as_p }}
+	<button class="btn btn-info" style="margin-left: 150px;" onclick="JSalert()"> Upload<i class="material-icons" style="font-size:15px">file_upload</i></button>
+</div>	
+	
+</form>
+<script type="text/javascript">
+function JSalert(){
+	swal("successfully", ", successfully Uploaded Result ", "success");
+}
+</script>
+{% endblock %}

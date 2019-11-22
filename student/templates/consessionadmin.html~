@@ -1,0 +1,56 @@
+{% extends 'index3.html' %}
+
+<title>{% block title %} ExamAdmin HomePage {% endblock %}</title>
+{% block body %}
+
+<div class="fluid">
+   <div class="row" id="maindiv">
+	<div class="col-sm-8" >
+        <table id="user_details">
+	
+	<tr>
+         <td>Name:-</td>
+         <td>{{ user.consessionadmin.full_name }}</td>
+        </tr>
+	<tr>
+         <td>Email:-</td>
+         <td>{{ user.email }}</td>
+        </tr>
+
+
+
+	
+         <td>Mobile Number:-</td>
+         <td>{{ user.consessionadmin.mobile_no }}</td>
+        </tr>
+	tr>
+         <td>Address:-</td>
+         <td>{{ user.consessionadmin.address }}</td>
+        </tr>
+
+    
+	
+        
+	
+	<td></td>
+	
+        <center> 
+	
+	<td><a href="{% url 'concessionadminUpdate' user.consessionadmin.id %}"><button class="btn btn-info"style="margin-right:50px;" >UPDATE</button></a></td>
+	
+         
+	
+        
+
+	
+        <center> 
+	
+	
+	</center>
+	</tr>
+        </table>
+
+    	</div>
+	</div>
+	</div>
+{% endblock %}

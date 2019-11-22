@@ -1,0 +1,149 @@
+{% extends 'index.html' %}
+<title>
+  {% block title %} Regular_Examination {% endblock %}
+</title>
+{% block body %}
+
+
+<script>
+  function overlay(n) {
+
+    field = document.getElementById("hidden_field");
+    field.value = n;
+    document.getElementById("subject_name").innerHTML = n;
+    console.log('{{isFill}}');
+
+  }
+</script>
+
+
+
+<!-- {% for subjects in subject %}
+<li>{{ subjects.name }}</li>
+{% endfor %} -->
+</table>
+</div></b></center>
+
+<h1>you already fill the form</h1>
+
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.1.min.js">
+</script>
+<script>
+  $("#id_year").change(function () {
+    var url = $("#examform").attr("data-semesters-url"); // get the url of the `load_cities` view
+    var yearId = $(this).val(); // get the selected country ID from the HTML input
+     
+
+    $.ajax({ // initialize an AJAX request
+      url: url, // set the url of the request (= localhost:8000/hr/ajax/load-cities/)
+      data: {
+        'year': yearId // add the country id to the GET parameters
+      },
+      success: function (data) { // `data` is the return of the `load_cities` view function
+        $("#id_semester").html(
+        data); // replace the contents of the city input with the data that came from the server
+      }
+    });
+
+  });
+
+
+  // $("#id_semester").change(function () {
+  //   var url = $("#examform").attr("data-semesters-url"); // get the url of the `load_cities` view
+  //   var semesterId = $(this).val(); // get the selected country ID from the HTML input
+     
+
+  //   $.ajax({ // initialize an AJAX request
+  //     url: url, // set the url of the request (= localhost:8000/hr/ajax/load-cities/)
+  //     data: {
+  //       'semester': semesterId // add the country id to the GET parameters
+  //     },
+  //     success: function (data) { // `data` is the return of the `load_cities` view function
+  //       $("#id_div").html(
+  //       data); // replace the contents of the city input with the data that came from the server
+  //       console.log(data)
+  //     }
+  //   });
+
+  // });
+
+
+
+  // let semester_id = document.getElementById('semester_id').addEventListener('onchange', function () {
+  //   let sem = document.getElementById('semester_id').value;
+  //   console.log(sem);
+  // // });
+
+  // function myFunction() {
+  //   let sem = document.getElementById('id_semester');
+  //   var text= sem.options[sem.selectedIndex].text;
+  //   let branch = document.getElementById('id_branch');
+  //   let branch_text = branch.options[branch.selectedIndex].text;
+  //   // console.log(sem.options[sem.selectedIndex].text);
+  //   // s = `{% for a in subject %}{{a.name}}{% endfor %}`;
+  //   subjects ={{ sub|safe }};
+  //   branch_select = {{ branch|safe }};
+  //   semester_select = {{ semester|safe }};
+  //   console.log(subjects);
+  //   console.log(branch_select);
+  //   console.log(semester_select);
+  //   subject ="Database Management System";
+  //   if (sem == 1) {
+  //     a= document.getElementById("subject").innerHTML = `{% for a in sub %}{{a.name}}{% endfor %}`;
+  //     // console.log(a); 
+  //   }
+  //   if (branch_select.indexOf(branch_text)>-1){
+  //     console.log("available");
+  //     for (var i in subjects){
+  //       console.log(subjects[i]);
+  //     }
+  //   }
+  // }
+// </script>
+
+<script>
+  function overlay(n) {
+    alert("Your Application for Exam-Form successesfully Submited!");
+  }
+</script>
+<script type="text/javascript">
+  function printContent(el) {
+    var restorepage = document.body.innerHTML;
+    var printcontent = document.getElementById(el).innerHTML;
+    document.body.innerHTML = printcontent;
+    window.print();
+    document.body.innerHTML = restorepage;
+  }
+</script>
+
+
+
+<script>
+    function myFunction(str) {
+      let sem = document.getElementById('id_semester').value;
+      let branch_id=document.getElementById('id_branch').value;
+      // var text= sem.options[sem.selectedIndex].text;
+      console.log(branch_id);
+      
+      var xhttp;    
+      if (sem == "") {
+        document.getElementById("id_table").innerHTML = "";
+        return;
+      }
+      xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          document.getElementById("id_table").innerHTML = this.responseText;
+          console.log(this.responseText)
+        }
+      };
+      a = xhttp.open("GET", "ajax/load-subjects?q="+sem+"&branch="+branch_id, true);
+      console.log(a);
+      xhttp.send();
+    }
+    </script>
+
+
+
+
+{% endblock %}

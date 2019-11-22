@@ -1,0 +1,105 @@
+<!doctype HTML>
+<html>
+    <head>
+        <title>SSJCOE HOME</title>
+        <link href="css\style.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <img src="images/logo.png" alt="logo">
+        <div id="div1">
+            <b>
+        <ul id="ul1">
+            <li id="li1">Home</li>
+            <li id="li2">Transportation
+                <ul id="sub1">
+                    <li>Railway Pass</li>
+                    <li>Bus Pass</li>
+                    
+                </ul>
+            </li>
+            <li id="li3">Examination
+                <ul id="sub2">
+                    <li><a href="examination.html">CBGS/CBCS Regular</a></li>
+                    <li><a href="exminationatkt.html">CBGS/CBCS ATKT</a></li>
+                </ul>
+            </li>
+            <li id="li4">Revaluation
+                <ul id="sub3">
+                    <li>CBGS/CBCS Regular Revaluation</li>
+                    <li>CBGS/CBCS ATKT Revaluation</li>
+                </ul>
+            </li>
+            <li id="li5">Photocopy
+                <ul id="sub4">
+                    <li>CBGS/CBCS Regular Photocopy</li>
+                    <li>CBGS/CBCS ATKT Photocopy</li>
+                </ul>
+            </li>
+            <li id="li6">Results</li>
+            <li id="li7">Feedback</li>
+            <li id="li8">Change Password</li>
+            <li id="li9">Logout</li>
+        </ul>
+                </b>
+        </div>
+        
+        <b><div id="div2">
+              <table width="700">
+                <tr>
+                    <td>Enrollment Number:-</td>
+                    <td>IT1115070182</td>
+                </tr>
+                <tr>
+                    <td>Name:-</td>
+                    <td>Yashodhan Yashwant Tamhankar</td>
+                </tr>
+                <tr>
+                    <td>Branch:-</td>
+                    <td>Information Technology</td>
+                </tr>
+                <tr>
+                    <td>Current Year:-</td>
+                    <td>BE</td>
+                </tr>
+                <tr>
+                    <td>Date Of Birth:-</td>
+                    <td>13-09-1995</td>
+                </tr>
+                <tr>
+                    <td>Address:-</td>
+                    <td>A-204,Shree Gana Apartment,Janta Market,Bhandup(W),Mumbai-400078</td>
+                </tr>
+                <tr>
+                    <td>Gender:-</td>
+                    <td>Male</td>
+                </tr>
+                <tr>
+                    <td>Mobile Number:-</td>
+                    <td>8793462613</td>
+                </tr>
+                <tr>
+                    <td>Category:-</td>
+                    <td>OBC</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><button>UPADTE</button></td>
+                </tr>
+               
+            </table>
+             
+            
+                <div id="div3"><center> Notification</center><marquee direction="up" height="300" width="300">
+                <ul>
+                    <li id="li10">Last Date for applying Photocopy 29/12/2018s   </li>
+                    <li id="li10">Dates for Exam-Form Filling 01/02/2019 To 10/02/2019  </li>
+                </ul>
+                </marquee></div>
+        
+            
+        </div></b>
+        
+        
+        
+    </body>
+</html>

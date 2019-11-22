@@ -1,0 +1,294 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+</head>
+
+<style>
+table, td, th {
+  border: 1px solid black;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th {
+  text-align: center;
+}
+td{
+text-align: center;
+}
+#sttd
+{
+    height: 80px;
+  vertical-align: bottom;
+  text-align: left;
+}
+#sttd1
+{
+    height: 80px;
+  vertical-align: bottom;
+  text-align: center;
+}
+#sttdhead{
+  height: 100px;
+  vertical-align: top;
+  text-align: center;
+}
+#specialh6
+{
+  font-family:"Euclid Fraktur", "Old English Text MT", fantasy, serif;
+  font-size: 30px;
+}
+}
+<
+</style>
+</head>
+<body>
+
+<div id="printtable" class="container">
+ <b><center><h4>Acknowledgement</h4></center></b> 
+ <b style="text-align: left;">[Student Copy]</b>
+<table>
+  <tr>
+  <td id="sttdhead">
+    <h5>SHIVAJIRAO S.JONDHALE COLLAGE OF ENGINEERING</h5>
+    <h5>sonarpada,post:Manpada, Dombivli(East)</h5>
+    <h6 id="specialh6">University Of Mumbai</h6>
+  </td>
+  
+  </tr>
+<table>
+  
+  
+  <tr>
+    <td>Student Name</td>
+    <td>{{ user.profile.full_name }} </td>
+  </tr>
+  <tr>
+    <td>
+      Addminssion No
+    </td>
+    <td>{{ user.profile.admission_no }}</td>
+  </tr>
+  <tr>
+    <td>Banch</td>
+    <td>{{ user.profile.branch }}</td>
+    <tr>
+    <td>Semester</td>
+    <td>{{ user.examformmodel.semester }}</td>
+  </tr>
+  
+</table><br>
+<b>Application For The Examination For The Subject</b>
+<table>
+<tr>
+<td>No</td>
+<td><center>Subject name</center></td>
+</tr>
+<td>
+
+{% if user.examformmodel.subject1 != '' %}  
+<tr>
+  <td>1</td>
+  <td>{{  user.examformmodel.subject1 }}</td>
+  
+</tr>
+
+{% endif %}
+{% if user.examformmodel.subject2 != '' %}
+<tr>
+  <td>2</td>
+  <td>{{ user.examformmodel.subject2 }}</td>
+  
+</tr>
+{% endif %}
+{% if user.examformmodel.subject3 != '' %}
+<tr>
+  <td>3</td>
+  <td>{{ user.examformmodel.subject3 }}</td>
+  
+</tr>
+{% endif %}
+{% if user.examformmodel.subject4 != '' %}
+<tr>
+  <td>4</td>
+  <td>{{ user.examformmodel.subject4 }}</td>
+  
+</tr>
+{% endif %}
+{% if user.examformmodel.subject5 != '' %}
+<tr>
+  <td>5</td>
+  <td>{{ user.examformmodel.subject5 }}</td>
+  
+</tr>
+{% endif %}
+{% if user.examformmodel.subject6 != '' %}
+<tr>
+  <td>6</td>
+  <td>{{ user.examformmodel.subject6 }}</td>
+  
+
+
+</tr>
+
+{% endif %}
+
+</td> 
+</table>
+
+</td> 
+</table><br>
+<table>
+  <td>Total Fees:</td>
+  <td>1005</td>
+</table>
+
+<table>
+  <tr>
+  <td id="sttd">
+    Sinature of the student
+  </td>
+  <td id="sttd1">
+    Collage seal and sign of authorized staff
+  </td>
+  
+  </tr>
+</table>
+<br>
+<br>
+<hr style="border: dashed; ">
+ <b><center><h4>Acknowledgement</h4></center></b> 
+ <b style="text-align: left;">[Collage Copy]</b>
+<table>
+  <tr>
+  <td id="sttdhead">
+    <h5>SHIVAJIRAO S.JONDHALE COLLAGE OF ENGINEERING</h5>
+    <h5>sonarpada,post:Manpada, Dombivli(East)</h5>
+    <h6 id="specialh6">University Of Mumbai</h6>
+  </td>
+  
+  </tr>
+<table>
+  
+  
+  <tr>
+    <td>Student Name</td>
+    <td>{{ user.profile.full_name }} </td>
+  </tr>
+  <tr>
+    <td>
+      Addminssion No
+    </td>
+    <td>{{ user.profile.admission_no }}</td>
+  </tr>
+  <tr>
+    <td>Banch</td>
+    <td>{{ user.profile.branch }}</td>
+    <tr>
+    <td>Semester</td>
+    <td>{{ user.examformmodel.semester }}</td>
+  </tr>
+  
+</table><br>
+<b>Application For The Examination For The Subject</b>
+<table>
+<tr>
+<td>No</td>
+<td><center>Subject name</center></td>
+</tr>
+<td>
+
+{% if user.examformmodel.subject1 != '' %}  
+<tr>
+  <td>1</td>
+  <td>{{  user.examformmodel.subject1 }}</td>
+  
+</tr>
+
+{% endif %}
+{% if user.examformmodel.subject2 != '' %}
+<tr>
+  <td>2</td>
+  <td>{{ user.examformmodel.subject2 }}</td>
+  
+</tr>
+{% endif %}
+{% if user.examformmodel.subject3 != '' %}
+<tr>
+  <td>3</td>
+  <td>{{ user.examformmodel.subject3 }}</td>
+  
+</tr>
+{% endif %}
+{% if user.examformmodel.subject4 != '' %}
+<tr>
+  <td>4</td>
+  <td>{{ user.examformmodel.subject4 }}</td>
+  
+</tr>
+{% endif %}
+{% if user.examformmodel.subject5 != '' %}
+<tr>
+  <td>5</td>
+  <td>{{ user.examformmodel.subject5 }}</td>
+  
+</tr>
+{% endif %}
+{% if user.examformmodel.subject6 != '' %}
+<tr>
+  <td>6</td>
+  <td>{{ user.examformmodel.subject6 }}</td>
+  
+
+
+</tr>
+
+{% endif %}
+
+</td> 
+</table><br>
+
+</td> 
+</table><br>
+<table>
+  <td>Total Fees:</td>
+  <td>950</td>
+</table>
+
+<table>
+  <tr>
+  <td id="sttd">
+    sinature of the student
+  </td>
+  <td id="sttd1">
+    Collage seal and sign of authorized staff
+  </td>
+  
+  </tr>
+</table>
+</div><br>
+<center><a href="" onclick="printContent('printtable')" class="btn btn-info">Print</a></center>
+
+
+</body>
+<script>
+  
+  function printContent(el){
+  var restorepage = document.body.innerHTML;
+  var printcontent = document.getElementById(el).innerHTML;
+  document.body.innerHTML = printcontent;
+  window.print();
+  document.body.innerHTML = restorepage;
+}
+</script>
+</html>

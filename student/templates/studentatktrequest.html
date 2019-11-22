@@ -1,0 +1,137 @@
+{% extends 'index1.html' %}
+{% block body %}
+  <title> {% block title %}Students Request{% endblock %}</title>   
+ <div class="col-sm-12 col-md-12">
+
+            <div class="panel panel-default">
+                    <center><h3 style="margin-left:200px;">All Students Who Apply For ATKT-Examination</h3></center>
+					<form class="form-inline my-2 my-lg-0">
+					 <select name="q">
+					 	<option>select branch</option>
+                    	<option>Information Technology</option>
+                    	<option>Computer Engineering</option>
+                    	<option>Mechanical Engineering</option>
+                    	<option>Chemical Engineering</option>
+                    	<option>Production Engineering</option>
+                	</select><br>
+     					 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+					 </form>	
+                    
+
+                    <table class="table">
+                        <thead>
+                        <tr>
+						<th>S.no.</th>
+							<th>Name:</th>
+							<th>Addmission No</th>
+							<th>Roll_no</th>
+							<th>Month</th>
+							<th>Branch</th>
+							<th>Year</th>
+							<th>Semester</th>
+							<th>Last Seat Number</th>
+							<th>Subjects</th>
+							<th>Status</th>
+							
+
+                        </tr>
+                        </thead>
+                        <tbody>
+			{% for r in examrequest %}
+     			<tr>
+			<td>
+			{{ forloop.counter }}
+			</td>
+			<td>
+			{{ r.user.profile.full_name }} 
+			</td>
+			<td>
+			{{ r.user.profile.admission_no }}
+			</td>
+			<td>
+			{{ r.roll_no}}
+			</td>
+			<td>
+				{{ r.month }}
+			</td>
+			<td>
+				{{ r.branch }}
+			</td>
+			<td>
+				{{ r.year }}
+			</td>
+			<td>
+				{{ r.semester }}
+			</td>
+			<td>
+				{{ r.last_seat_no }}
+			</td>
+			<td>
+				{{ r.IT_FE_1 }}
+			</td>
+			<td>
+				{{ r.IT_FE_2 }}
+			</td>
+             <td>
+				{{ r.IT_FE_3 }}
+			</td>
+             <td>
+				{{ r.IT_FE_4 }}
+			</td>
+             <td>
+				{{ r.IT_FE_5 }}
+			</td>
+            <td>
+				{{ r.IT_FE_6 }}
+			</td>
+			
+					 <td>
+									{%if r.status == 3 %}
+										<button type="button" class="badge badge-primary" data-toggle="modal" data-target="#myModal" onclick='over({{ r.id }})'><span class="glyphicon glyphicon-th"></span>&nbsp; Respond</button>
+									{%elif r.status == 1 %}
+										<span class="badge badge-success">Accepted</span>
+									{%elif r.status == 2 %}
+										<span class="badge badge-danger">Rejected</span>
+									{% endif %}
+
+                                </td>
+                   {% endfor %}             
+
+						<div id="myModal" class="modal fade" role="dialog">
+					  <div class="modal-dialog">
+
+						<div class="modal-content">
+						  <div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+
+						  </div>
+						  <div class="modal-body">
+							<form action="{% url 'responseatktExamrequest' %}" method="post" style="display: inline;">
+                                        {% csrf_token %}
+
+                                        <input type="hidden" name="request_id" id="hidden_field" value="" />
+										<hr>
+                                        <button type="submit" name="accept" value="accept" class="btn btn-success btn-xs">
+                                            <span class="glyphicon glyphicon-remove"></span>&nbsp; Accept
+                                        </button>
+										<button type="submit" name="reject" value="reject" class="btn btn-danger btn-xs">
+                                            <span class="glyphicon glyphicon-ok"></span>&nbsp; Reject
+                                        </button>
+                            </form>
+						  </div>
+						  <div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						  </div>
+						</div>
+			</tbody>
+			</table>
+				
+	</div>
+	</div>  
+<script type="text/javascript">
+	function over(n) {
+		field = document.getElementById("hidden_field");
+		field.value=n;
+}	      
+</script>
+{% endblock %}

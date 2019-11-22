@@ -1,0 +1,35 @@
+    {% elif user.profile.branch == 'computer engineering' and user.examformmodel.semester == 'SEM-III' %}
+      <td>20320{{ user.profile.roll_no }}</td>
+    {% elif user.profile.branch == 'computer engineering' and user.examformmodel.semester == 'SEM-IV' %}
+      <td>20420{{ user.profile.roll_no }}</td>
+    {% elif user.profile.branch == 'computer engineering' and user.examformmodel.semester == 'SEM-V' %}
+      <td>20520{{ user.profile.roll_no }}</td>  
+    {% elif user.profile.branch == 'computer engineering' and user.examformmodel.semester == 'SEM VI' %}
+      <td>20620{{ user.profile.roll_no }}</td>  
+    {% elif user.profile.branch == 'producion engineering' and user.examformmodel.semester == 'SEM-III' %}
+      <td>30320{{ user.profile.roll_no }}</td>
+    {% elif user.profile.branch == 'producion engineering' and user.examformmodel.semester == 'SEM-IV' %}
+      <td>30420{{ user.profile.roll_no }}</td> 
+    {% elif user.profile.branch == 'producion engineering' and user.examformmodel.semester == 'SEM-V' %}
+      <td>30520{{ user.profile.roll_no }}</td>     
+    {% elif user.profile.branch == 'producion engineering' and user.examformmodel.semester == 'SEM-VI' %}
+      <td>30620{{ user.profile.roll_no }}</td>
+    {% elif user.profile.branch == 'mechanical engineering' and user.examformmodel.semester == 'SEM-III' %}
+      <td>40320{{ user.profile.roll_no }}</td>          
+    {% elif user.profile.branch == 'mechanical engineering' and user.examformmodel.semester == 'SEM-IV' %}
+      <td>40420{{ user.profile.roll_no }}</td>          
+    {% elif user.profile.branch == 'mechanical engineering' and user.examformmodel.semester == 'SEM-V' %}
+      <td>40520{{ user.profile.roll_no }}</td>            
+    {% elif user.profile.branch == 'mechanical engineering' and user.examformmodel.semester == 'SEM-VI' %}
+      <td>40620{{ user.profile.roll_no }}</td>          
+    {% elif user.profile.branch == 'Chemical engineering' and user.examformmodel.semester == 'SEM-III' %}
+      <td>50320{{ user.profile.roll_no }}</td>
+    {% elif user.profile.branch == 'Chemical engineering' and user.examformmodel.semester == 'SEM-IV' %}
+       <td>50420{{ user.profile.roll_no }}</td>
+    {% elif user.profile.branch == 'Chemical engineering' and user.examformmodel.semester == 'SEM-V' %}
+       <td>50520{{ user.profile.roll_no }}</td>
+    {% elif user.profile.branch == 'Chemical engineering' and user.examformmodel.semester == 'SEM-VI' %}
+       <td>50620{{ user.profile.roll_no }}</td>
+    {% else %}   
+      <td>invalid</td>
+    {% endif %}   

@@ -1,0 +1,84 @@
+from django import forms
+from django.contrib.auth import authenticate
+from .models import examformmodel,UserProfileModel,atktmodel,regularrevalutionmodel,atktrevalutionmodel,regularphotocopymodel,atktphotocopymodel,Branch,Year,Semester,consessionformmodel
+
+
+
+
+SUBJECTS_CHOICES = (
+('one', 'ONE'),
+('two', 'TWO'),
+('three', 'THREE'),)
+
+YEARS= [x for x in range(2010,2019)]
+
+class UserForm(forms.Form):
+    birth_date= forms.DateField(label='What is your birth date?', widget=forms.SelectDateWidget(years=YEARS))
+	
+	
+
+
+
+
+   
+
+class UserProfileform(forms.ModelForm):
+	class Meta:
+		model = UserProfileModel
+		
+		fields = ('full_name','gender','mobile_no','category','address','image')
+
+class examform(forms.ModelForm):
+	
+	class Meta:
+		
+		model = examformmodel
+		fields = ['month','roll_no','branch','year','semester','subject1','subject2','subject3','subject4','subject5','subject6']
+
+
+class atktform(forms.ModelForm):
+	class Meta:
+		model = atktmodel
+
+		fields = ('month','roll_no','branch','year','semester','last_seat_no','subject1','subject2','subject3','subject4','subject5','subject6')
+
+
+class regularrevalutionform(forms.ModelForm):
+	class Meta:
+		model = regularrevalutionmodel
+
+		fields = ('month','roll_no','branch','year','semester','last_seat_no','subject1','subject2','subject3','subject4','subject5','subject6')
+
+class atktrevalutionform(forms.ModelForm):
+	class Meta:
+		model = atktrevalutionmodel
+		
+		fields = ('month','roll_no','branch','year','semester','last_seat_no','subject1','subject2','subject3','subject4','subject5','subject6')
+
+class regularphotocopyform(forms.ModelForm):
+	class Meta:
+		model = regularphotocopymodel
+
+		fields = ('month','roll_no','branch','year','semester','last_seat_no','subject1','subject2','subject3','subject4','subject5','subject6')
+
+class atktphotocopyform(forms.ModelForm):
+	class Meta:
+		model = atktphotocopymodel
+		
+		fields = ('month','roll_no','branch','year','semester','last_seat_no','subject1','subject2','subject3','subject4','subject5','subject6')
+
+
+class concessionform(forms.ModelForm):
+	
+	
+	class Meta:
+		model = consessionformmodel
+		fields = ('last_ticket_from','last_ticket_to','last_ticket_type','last_ticket_period','last_certificate_no','last_ticket_no','date')
+		widgets = {'date' : forms.SelectDateWidget(years=YEARS) }
+
+
+
+
+
+
+

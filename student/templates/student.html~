@@ -1,0 +1,149 @@
+{% extends 'index.html' %}
+{% block body %}
+<div class="fluid">
+   <div class="row" id="maindiv">
+	<div class="col-sm-8" >
+        <table id="user_details">
+	<tr>
+         <td>Admission No:-</td>
+         <td id="td1">{{ user.profile.admission_no }}</td>
+        </tr>
+	<tr>
+         <td>Name:-</td>
+         <td>{{ user.profile.full_name }}</td>
+        </tr>
+	<tr>
+         <td>Date Of Birth:-</td>
+         <td>{{ user.profile.birth_date }}</td>
+        </tr>
+	<tr>
+         <td>Address:-</td>
+         <td>{{ user.profile.address }}</td>
+        </tr>
+	<tr>
+         <td>Email:-</td>
+         <td>{{ user.email }}</td>
+        </tr>
+	<tr>
+         <td>Mobile Number:-</td>
+         <td>{{ user.profile.mobile_no }}</td>
+        </tr>
+	<tr>
+         <td>Gender:-</td>
+         <td>{{ user.profile.gender }}</td>
+        </tr>
+	<tr>
+         <td>Current Year:-</td>
+         <td>{{ user.profile.current_year }}</td>
+        </tr>
+	
+	
+        
+	<tr>
+         <td>Category:-</td>
+         <td>{{ user.profile.category }}</td>
+     </tr>   
+	<tr> 
+	<td></td>
+	
+        <center> 
+	
+	<td><a href="{% url 'studentupdate' user.profile.id %}"><button class="btn btn-info"style="margin-right:50px;" >UPDATE</button></a></td>
+	</center>
+	</tr>
+        </table>
+
+    </div>
+
+<div class="col-sm-4" id="notification"><center>Notification<br><marquee direction="up" height="300" width="300" scrollamount="3">
+                <ul>
+                    
+    {%if  user.consessionformmodel.status  == 1 %}
+      <li><strong>* Your Request is Aceepted by Consession-Admin Please Collect Consession-form from consession Admin *</strong></li>
+    {% elif user.consessionformmodel.status  == 2 %}
+    <li><strong>* Your Request is Rejected by Consession-Admin Please Contact with consession admin</strong></li>
+    {% elif user.consessionformmodel.status  == 3 %}
+        <li><strong>* Your Request For RailwayConcession Form is Pending</strong></li>
+    {% else %}    
+
+    {% endif %}
+
+      {%if  user.newconsessionformmodel.status  == 1 %}
+      <li><strong>* Your Request is Aceepted by Consession-Admin Please Collect Consession-form from consession Admin *</strong></li>
+    {% elif user.newconsessionformmodel.status  == 2 %}
+    <li><strong>* Your Request is Rejected by Consession-Admin Please Contact with consession admin</strong></li>
+    {% elif user.newconsessionformmodel.status  == 3 %}
+        <li><strong>* Your Request For New RailwayConcession Form is Pending</strong></li>
+    {% else %}    
+
+    {% endif %}
+
+    {%if  user.examformmodel.status  == 1 %}
+         <li><strong>* Your Regular Examination Application form Has been Approved Check Hall-Ticket Section To Print Hall-Ticket</strong></li>
+    {% elif user.examformmodel.status  == 2 %}
+         <li><strong>* Your Regular Examination Application form Has been rejected Contact With Exam-Cell Admin</strong></li>
+    {% elif user.examformmodel.status  == 3 %}
+        <li><strong>* Your Regular Examination Application Request is Pending</strong></li>
+    {% else %}    
+
+    {% endif %}
+    {%if  user.atktmodel.status  == 1 %}
+         <li><strong>* Your ATKT Exmaination Application Form Has been Approved Check Hall-Ticket Section To Print Hall-Ticket</strong></li>
+    {% elif user.atktmodel.status  == 2 %}
+         <li><strong>* Your ATKT Exmaination Application Form is Rejected Please Contact With Examcell Admin</strong></li>
+    {% elif user.atktmodel.status  == 3 %}
+        <li><strong>* Your Request ATKT Exmaination is Pending</strong></li>
+    {% else %}    
+
+    {% endif %}  
+
+    {%if  user.regularrevalutionmodel.status  == 1 %}
+         <li><strong>* Your Application for Reguler Revaluation has been Approved Wait For Result </strong></li>
+    {% elif user.regularrevalutionmodel.status  == 2 %}
+         <li><strong>* Your Application For Reguler Revaluation is rejected please contact with Examcell</strong></li>
+    {% elif user.regularrevalutionmodel.status  == 3 %}
+        <li><strong>* Your Request Reguler Revaluation is Pending</strong></li>
+    {% else %}    
+
+    {% endif %}    
+
+    {%if  user.atktrevalutionmodel.status  == 1 %}
+         <li><strong>* Your Application for ATKT Revaluation has been Approved Wait For Result </strong></li>
+    {% elif user.atktrevalutionmodel.status  == 2 %}
+         <li><strong>* Your Application For ATKT Revaluation is rejected please contact with Examcell</strong></li>
+    {% elif user.atktrevalutionmodel.status  == 3 %}
+        <li><strong>* Your Request ATKT Revaluation is Pending</strong></li>
+    {% else %}    
+
+    {% endif %}   
+
+
+    {%if  user.regularphotocopymodel.status  == 1 %}
+         <li><strong>* Your Application for Reguler Photocopy has been Approved Wait For Result </strong></li>
+    {% elif user.regularphotocopymodel.status  == 2 %}
+         <li><strong>* Your Application For Reguler Photocopy is rejected please contact with Examcell</strong></li>
+    {% elif user.regularphotocopymodel.status  == 3 %}
+        <li><strong>* Your Request Reguler Photocopy is Pending</strong></li>
+    {% else %}    
+
+    {% endif %} 
+
+
+    {%if  user.atktphotocopymodel.status  == 1 %}
+         <li><strong>* Your Application for ATKT Photocopy has been Approved Wait For Result </strong></li>
+    {% elif user.atktphotocopymodel.status  == 2 %}
+         <li><strong>* Your Application For ATKT Photocopy is rejected please contact with Examcell</strong></li>
+    {% elif user.atktphotocopymodel.status  == 3 %}
+        <li><strong>* Your Request ATKT Photocopy is Pending</strong></li>
+    {% else %}    
+
+    {% endif %}
+
+
+    
+                </ul>
+                
+                </marquee></center></div>
+</div>
+	</div>
+{% endblock %}

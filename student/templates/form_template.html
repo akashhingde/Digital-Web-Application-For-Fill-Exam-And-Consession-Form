@@ -1,0 +1,22 @@
+{% load staticfiles %}
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="{% static 'student/style.css' %}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+
+
+{% for field in form %}
+    <div class="form-group">
+<b>
+        <div class="col-sm-offset-2 col-sm-10">
+            <span class="text-danger small">{{ field.errors }}</span>
+        </div>
+        <label class="control-label col-sm-6" >{{ field.label_tag }}</label>
+        <div class="col-sm-6" }>{{ field }}</div>
+</b>
+    </div>
+{% endfor %}

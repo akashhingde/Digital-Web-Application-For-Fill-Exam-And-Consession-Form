@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{% load staticfiles %}
+
+  <title> {% block title %}{{ user.username }}{% endblock %}</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="{% static 'student/style.css' %}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <script src="alert/dist/sweetalert-dev.js"></script>
+  <link rel="stylesheet" href="alert/dist/sweetalert.css">
+</head>
+<body>
+    
+    
+
+<img src="{% static 'student/images/logo2.jpg' %}" alt="logo" width="100%" id="logoimg">
+        
+        <img id="profile_image" src="{{ user.examcelladmin.image.url }}">
+
+
+
+<h3><b><font color="white" id="username">Exam-Cell Admin &nbsp&nbsp&nbsp&nbsp</font></b></h3>
+
+
+
+        
+<div class="navbar navbar-expand-md bg-dark navbar-dark " id="navbar">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+<b>
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="http://127.0.0.1:8000/">Home</a>
+      </li>
+      
+      <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+        Examination
+      </a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="/studentrequest">CBGS/CBCS Regular Examination Request</a>
+        <a class="dropdown-item" href="/studentatktrequest">CBGS/CBCS ATKT Examination Request</a>
+        
+      </div>
+    </li>
+      <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+        Revaluation
+      </a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item bg-blue" href="/regularrevalutionrequest">CBGS/CBCS Regular Revaluation Request</a>
+        <a class="dropdown-item" href="/atktrevalutionrequest">CBGS/CBCS ATKT Revaluation Request</a>
+        
+      </div>
+    </li>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+        Photocopy
+      </a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="regularphotocopyrequest">CBGS/CBCS Regular Photocopy Request</a>
+        <a class="dropdown-item" href="atktphotocopyrequest">CBGS/CBCS ATKT Photocopy Request</a>
+        
+      </div>
+    </li>
+
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+        Upload
+      </a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="/uploadresult">UploadResult</a>
+        <a class="dropdown-item" href="/uploadnotice">Uploadnotice</a>
+        
+      </div>
+    </li>    
+        
+    
+       
+        <li class="nav-item">
+        <a class="nav-link" href="{% url 'logout' %}?next=/">Logout</a>
+        </li>
+    </ul>
+</b>
+  </div>  
+</div></b>
+<br>
+
+
+
+
+
+{% block body %}
+{% endblock %}
+</body>
+</html>

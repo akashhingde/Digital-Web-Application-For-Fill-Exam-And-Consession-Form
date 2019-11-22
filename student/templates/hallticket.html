@@ -1,0 +1,26 @@
+{% extends 'index.html' %}
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+	 <center><h3>Hall-Ticket Section</h3></center>
+	<center>
+	 {%if user.examformmodel.status  == 1 %}
+	 	<strong>Regular Examination:-</strong> {{ user.examformmodel.branch }} {{ user.examformmodel.semester }} HAll TICKET<br>
+	 	<a href="/printhallticket" class="btn btn-info">print</a>
+	 {% endif %}<br>
+	 	 {%if user.atktmodel.status  == 1 %}
+	 	<strong>ATKT Examination:-</strong> {{ user.atktmodel.branch }} {{ user.atktmodel.semester }} HAll TICKET<br>
+	 	<a href="/printatkthallticket" class="btn btn-info">print</a>
+	 {% endif %}
+
+	 </center>
+	
+
+</body>
+{% endblock %}
+</html>

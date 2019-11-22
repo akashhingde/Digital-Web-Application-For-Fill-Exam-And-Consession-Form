@@ -1,0 +1,28 @@
+{% extends 'index.html' %}
+{% block title %}Notice{% endblock %}
+
+{% block body %}
+<center><h3>Notice Section</h3></center>
+{% for a in all_notice %}
+
+
+	{% if user.profile.branch == a.branch %}
+		
+		<div class="container">
+			Notice: for {{ a.branch }} <b><p  class="alert alert-dark" role="alert">{{ a.notice }}<br>
+				Date: <b>{{ a.date }}</b></p></b>
+
+	{% elif a.branch == 'all branch' %}
+		<div class="container">
+			Notice: for {{ a.branch }} <b><p  class="alert alert-dark" role="alert">{{ a.notice }}<br>
+				Date: <b>{{ a.date }}</b></p></b>
+			
+		</div>
+
+	{% endif %}
+{% endfor %}
+
+
+
+
+{% endblock %}

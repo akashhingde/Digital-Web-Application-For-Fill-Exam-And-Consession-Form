@@ -1,0 +1,90 @@
+#login_div{
+    
+    
+    margin-top:100px;
+    text-align: center;
+    
+    
+}
+#body
+{
+ background:url("images/tree.jpg")
+}
+#td1
+{
+
+	margin-left:100px;
+}
+.bg-dark
+{
+	background: blue !important;
+}
+
+#navbar{
+    
+    margin-top: 0px;
+}
+
+#user_details{
+    
+	margin-left: 100px;
+   
+    margin-top: 20px;
+    
+}
+
+#notification{
+ }
+
+
+
+
+
+#ticket_info{
+padding-left: 50px;
+}
+
+#logoimg{
+	position:relative;
+}
+
+#profile_image{
+	position:absolute;
+	top:60px;
+	right:100px;
+	
+	width:123px;
+	height:123px;
+	border-radius: 50%;
+}
+
+#username{
+	position:absolute;
+	top:200px;
+	right:10px;
+	font-family: "Times New Roman";
+}
+
+#designation{
+	position:absolute;
+	top:300px;
+	right:10px;
+	font-family: "Times New Roman";
+}
+
+#branchname{
+	position:absolute;
+	top:230px;
+	right:15px;
+	font-family: "Times New Roman";
+}
+
+#consessionimg{
+
+}
+
+#select{
+margin-left:20px;
+
+
+}

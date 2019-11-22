@@ -1,0 +1,33 @@
+{% if subjects %}
+<br>
+<center>Subjects</center>
+<br>
+
+<table class="auto-style46" cellspacing="0" cellpadding="1" rules="rows" id="PageContentPlaceHolder_Subjects_GridView"
+    style="background-color:White;border-color:#336666;border-width:3px;border-style:Double;width:850px;border-collapse:collapse;">
+    <tbody>
+        <tr align="center" style="color:White;background-color:#336666;font-weight:bold;">
+            <th scope="col">No.</th>
+            <th scope="col">SubjectName</th>
+            {% for sub in subjects %}
+        </tr>
+        <tr align="center" style="color:#333333;background-color:White;">
+            <td style="height:26px;width:120px;">
+                <span
+                    id="PageContentPlaceHolder_Subjects_GridView_SubCode_Label_{{forloop.counter}}">{{forloop.counter}}
+                </span>
+            </td>
+            <td style="height:26px;">
+                <span
+                    id="PageContentPlaceHolder_Subjects_GridView_SubName_Label_{{forloop.counter}}">{{ sub.name }}</span>
+            </td>
+            {% endfor %}
+
+        </tr>
+    </tbody>
+</table>
+
+
+{% else %}
+
+{% endif %}

@@ -1,0 +1,26 @@
+{% if subjects %}
+
+        <thead>
+            <tr>
+                <th scope="col">No</th>
+                <th scope="col">Subject Name</th>
+                <th scope="col">Time</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            
+            {% for sub in subjects %}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{ sub.name }}</td>
+                <td>3pm-6pm</td>
+                
+            </tr>
+            {% endfor %}
+        </tbody>
+
+
+{% else %}
+
+{% endif %}

@@ -1,0 +1,15 @@
+{% extends 'index.html' %}
+
+{% block body %}
+<center><h3>Result Section</h3></center>
+{% for a in all_result %}
+
+	{% if user.profile.branch == a.branch %}
+		
+		
+	<center ><h3 style="text-align: center;">Branch:{{ a.branch }} <br>Semester: {{ a.semester }}</h3><br>
+		<a href="{{ a.result.url }}" download=""  class="far fa-file-pdf" style="font-size:24px;color:red;color: white;"><button class="btn btn-info"><b> Download</b></button> </a></center>
+		{% endif %}
+{% endfor %}
+
+{% endblock %}

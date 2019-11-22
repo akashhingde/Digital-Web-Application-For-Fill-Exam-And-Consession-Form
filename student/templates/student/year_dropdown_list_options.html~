@@ -1,0 +1,4 @@
+<option value="">---------</option>
+{% for year in years %}
+<li value="{{ year.id }}">{{ year.name }}</li>
+{% endfor %}
